@@ -1,0 +1,104 @@
+description = 'identity-api-automation'
+version = '1.0'
+repositories {
+    mavenCentral()
+    jcenter()
+    mavenLocal()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0"
+        classpath "gradle.plugin.com.github.sherter.google-java-format:google-java-format-gradle-plugin:0.9"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'org.sonarqube'
+
+version '1.0-SNAPSHOT'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+buildscript {
+    repositories {
+
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.3.10")
+    }
+}
+ext{
+    serenityVersion = '1.9.9'
+    serenityCucumberVersion = '1.9.35'
+}
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.jdbc.username", "admin"
+        property "sonar.jdbc.password", "admin"
+        property "sonar.projectKey", "IDENTITY"
+        property "sonar.projectName", "IDENTITY"
+        property "sonar.projectVersion", "1.0"
+        property "sonar.sources", "src/main"
+        property "sonar.test", "src/test"
+    }
+}
+sonarqube {
+    properties {
+        property "sonar.projectKey", "APIAutomationTestingCore"
+        property "sonar.projectName", "Identity Api Automation Tests"
+        property "sonar.sources", "src/main"
+        property "sonar.test", "src/test"
+    }
+}
+dependencies {
+
+    implementation 'com.auth0:java-jwt:4.3.0'
+    implementation 'com.auth0:jwks-rsa:0.22.0'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    testImplementation 'net.serenity-bdd:serenity-core:1.1.1'
+    testImplementation 'net.serenity-bdd:serenity-junit:1.1.1'
+    testImplementation('junit:junit:4.13.2')
+    testImplementation 'org.assertj:assertj-core:3.21.0'
+    testImplementation 'org.slf4j:slf4j-simple:1.7.32'
+    implementation "net.serenity-bdd:serenity-rest-assured:$rootProject.ext.serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-core:$rootProject.ext.serenityVersion"
+    testImplementation "net.serenity-bdd:serenity-junit:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:$rootProject.ext.serenityVersion"
+    implementation "net.serenity-bdd:serenity-cucumber:$rootProject.ext.serenityCucumberVersion"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:2.0.0"
+    implementation 'org.apache.poi:poi-ooxml:5.0.0'
+    implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '${serenity.version}'
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '5.3.0'
+    implementation group: 'log4j', name: 'log4j', version: '1.2.17',  {
+        exclude group: 'com.sun.jmx', module: 'jmxri'
+        exclude group: 'com.sun.jdmk', module: 'jmxtools'
+        exclude group: 'javax.jms', module: 'jms'}
+    implementation 'org.json:json:20210307'
+    implementation group: 'org.json', name: 'json', version: '20230227'
+}
+
+//gradle.startParameter.continueOnFailure = true
+test {
+    maxHeapSize = "256m"
+    ignoreFailures = true
+}

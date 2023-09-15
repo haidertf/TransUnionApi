@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Se requiere validar la automatizacion de una de las apis Get" skipped="0" tests="4" time="4.13" timestamp="2023-09-15 06:20:26"><testcase name="Se realiza la prueba exitosa al api get pet"/><testcase name="Se realiza la prueba exitosa al api get store"/></testsuite>
