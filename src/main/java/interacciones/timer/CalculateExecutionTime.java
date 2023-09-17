@@ -3,7 +3,7 @@ package interacciones.timer;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 
-import static co.com.identity_auto.certification.utilidades.enums.Timer.START_TIME;
+import static utilidades.enums.Timer.START_TIME;
 
 public class CalculateExecutionTime implements Interaction {
     public static CalculateExecutionTime serviceResponse() {

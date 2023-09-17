@@ -17,7 +17,6 @@ public class PostPlaceAnOrderStep {
 
     @When("^Se ejecuta el api post place an order$")
     public void se_ejecuta_el_api_post_place_an_order() {
-        // Write code here that turns the phrase above into concrete actions
         theActorInTheSpotlight().attemptsTo(PostPlaceAnOrderTask.order());
     }
 

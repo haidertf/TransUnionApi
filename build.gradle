@@ -1,4 +1,4 @@
-description = 'identity-api-automation'
+description = 'APISPRUEBA'
 version = '1.0'
 repositories {
     mavenCentral()
@@ -54,8 +54,8 @@ sonarqube {
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.jdbc.username", "admin"
         property "sonar.jdbc.password", "admin"
-        property "sonar.projectKey", "IDENTITY"
-        property "sonar.projectName", "IDENTITY"
+        property "sonar.projectKey", "APISPRUEBA"
+        property "sonar.projectName", "APISPRUEBA"
         property "sonar.projectVersion", "1.0"
         property "sonar.sources", "src/main"
         property "sonar.test", "src/test"
@@ -64,7 +64,7 @@ sonarqube {
 sonarqube {
     properties {
         property "sonar.projectKey", "APIAutomationTestingCore"
-        property "sonar.projectName", "Identity Api Automation Tests"
+        property "sonar.projectName", "Api Automation Tests"
         property "sonar.sources", "src/main"
         property "sonar.test", "src/test"
     }
@@ -97,7 +97,6 @@ dependencies {
     implementation group: 'org.json', name: 'json', version: '20230227'
 }
 
-//gradle.startParameter.continueOnFailure = true
 test {
     maxHeapSize = "256m"
     ignoreFailures = true

@@ -1,3 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Se requiere validar la automatizacion de una de las apis Get","Se realiza la prueba exitosa al api get pet","SUCCESS","2023-09-15T06:20:26.4726122-05:00[America/Bogota]","0.0","3.68"
-"Se requiere validar la automatizacion de una de las apis Get","Se realiza la prueba exitosa al api get store","SUCCESS","2023-09-15T06:20:30.1530053-05:00[America/Bogota]","0.0","0.45"
+"Se requiere validar la automatizacion de una de las apis Get pet","Se realiza la prueba exitosa al api get pet","SUCCESS","2023-09-16T14:50:20.5684795-05:00[America/Bogota]","0.0","3.86"
+"Se requiere validar la automatizacion de una de las apis post pet","Se realiza la prueba exitosa al api post pet","SUCCESS","2023-09-16T14:50:24.4328314-05:00[America/Bogota]","0.0","0.5"

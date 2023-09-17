@@ -3,6 +3,7 @@ package utilidades.enums;
 public enum EnumsEndPoints {
     PLACE_AN_ORDER("/store/order"),
     FIND_PURCHASE_ORDER_BY_ID("/store/order/%s"),
+    UPDATES_A_PET("/pet/%s"),
     FIND_BY_STATUS("/pet/findByStatus?status=%s")
 
     ;
